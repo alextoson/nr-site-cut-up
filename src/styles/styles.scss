@@ -1,2 +1,13 @@
-@import "./base/settings";
-@import "./base/base";
+@import "base/variables";
+@import "base/functions";
+@import "base/base";
+@import "base/layout";
+
+//common components
+
+//navigation components
+@import "components/navigation/nav";
+@import "components/navigation/mobileMenu";
+@import "components/navigation/footer";
+
+//homepage components

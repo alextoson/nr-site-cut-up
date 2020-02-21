@@ -1,16 +1,278 @@
 html {
   font-size: 62.5%;
+  position: relative;
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+html * {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: $m-size;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #1a1a1a;
+  font-family: "Montserrat", "Verdana", sans-serif;
+  font-size: 1.4em;
+  position: relative;
 }
 
-button {
+figure {
+  margin: 0;
+}
+
+div,
+nav,
+article,
+section,
+header,
+footer {
+  position: relative;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
+  outline: none;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
-button:disabled {
-  cursor: default;
+textarea {
+  resize: none;
+}
+
+//styles for the different levels of content
+//thoughout the website
+.body-content {
+  color: $grey4;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+
+  &__secondary {
+    @extend .body-content;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+
+  &__tertiary {
+    @extend .body-content;
+    font-size: 1rem;
+    line-height: 1.4em;
+  }
+
+  &--light-grey {
+    color: $grey3;
+  }
+
+  &--black {
+    color: $p-colour1;
+  }
+
+  &--bold {
+    font-weight: 500;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.8rem;
+    line-height: 3.5rem;
+
+    &__secondary {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+    }
+  }
+}
+
+//styles for the different levels of headings
+//thoughout the website
+.heading {
+  &__primary {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 25px 0;
+  }
+
+  &__secondary {
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  &--white {
+    color: white;
+  }
+
+  &--dark {
+    color: $p-colour1;
+  }
+
+  &--navy {
+    color: $s-colour3;
+  }
+
+  &--orange {
+    color: $p-colour3;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__primary {
+      font-size: 4.2rem;
+      margin: 45px 0;
+    }
+
+    &__secondary {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.button {
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 200px;
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  height: 36px;
+  line-height: 36px;
+  cursor: pointer;
+
+  &__primary {
+    @extend .button;
+    @include orangeGradient(true);
+    border-radius: 18px;
+    color: white;
+    border: none;
+  }
+
+  &__secondary {
+    @extend .button;
+    border-radius: 18px;
+    border: 1px solid;
+  }
+
+  &__tertiary {
+    @extend .button;
+    border-radius: 6px;
+    border: 1px solid;
+    background-color: transparent;
+  }
+
+  &__ghost {
+    @extend .button;
+    border-radius: 18px;
+    border: 1px solid white;
+    cursor: default;
+  }
+
+  &--orange {
+    border-color: $p-colour3;
+    color: $p-colour3;
+
+    &:hover {
+      background-color: rgba($p-colour3, 0.1);
+    }
+  }
+
+  &--green {
+    border-color: $s-colour6;
+    color: $s-colour6;
+
+    &:hover {
+      background-color: rgba($s-colour6, 0.1);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 48px;
+    line-height: 48px;
+    font-size: 1.3rem;
+    width: 250px;
+
+    &__primary {
+      border-radius: 24px;
+    }
+
+    &__secondary {
+      border-radius: 24px;
+    }
+
+    &__tertiary {
+      border-radius: 6px;
+    }
+
+    &__ghost {
+      border-radius: 24px;
+    }
+  }
+
+  &--small {
+    width: 200px;
+  }
+}
+
+//image responsive class, basically taken from bootstrap
+.img-rspnv {
+  max-width: 100%;
+  display: block;
+  height: auto;
+
+  &__center {
+    @extend .img-rspnv;
+    margin: 0 auto;
+  }
+}
+
+//resets all ul and ol lists
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+//resets text capitalisation for where it is
+//not needed, but already set for other items
+.case-normalise {
+  text-transform: none;
+}
+
+//scrol positioning for all the hero landing pages
+.scroll-down-position {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mobile-menu-shadow {
+  box-shadow: 0px 6px 6px rgba(51, 51, 51, 0.2);
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  width: 100%;
+  height: 1rem;
+}
+
+//correct the font for form buttons
+input[type="submit"] {
+  font-family: "Montserrat", "Verdana", sans-serif;
 }

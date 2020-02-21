@@ -1,6 +1,6 @@
-# Indecision App
+# New Republique Coding Test
 
-This is a simple application for you to list tasks that you need to complete and then allow the application to dicate which task you should do next.
+This coding test is a cut up of one of ther webpages of New Republique's current website.
 
 ## Technologies
 
