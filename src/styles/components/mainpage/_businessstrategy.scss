@@ -1,0 +1,36 @@
+.bus-strat {
+  @include flexbox(
+    $direction: column,
+    $justify-content: space-between,
+    $align-items: stretch
+  );
+
+  &__content,
+  &__image {
+    @include flex-item($grow: 1, $shrink: 1, $basis: 50%);
+  }
+
+  &__content {
+    padding: 30px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    @include flexbox(
+      $direction: row,
+      $justify-content: space-between,
+      $align-items: stretch
+    );
+
+    &__content {
+      @include order(2);
+    }
+
+    &__image {
+      @include order(1);
+    }
+  }
+}

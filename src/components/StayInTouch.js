@@ -1,16 +1,24 @@
 import React from "react";
 
 const StayInTouch = () => (
-  <section>
-    <h2>Stay in Touch</h2>
-    <p>
+  <section className="stay-in-touch">
+    <h2 className="heading">Stay in Touch</h2>
+    <p className="body-content">
       Each month we release a newsletter on how we do what we do. Lorem ipsum
       dolor sit amet, consectetur adipisicing elit.
     </p>
     <form>
       <label>
-        <input type="text" />
-        <input type="submit" />
+        <input
+          className="stay-in-touch__input"
+          type="email"
+          placeholder="Enter you email address..."
+        />
+        <input
+          className="stay-in-touch__submit"
+          type="submit"
+          value="sign up to our newsletter"
+        />
       </label>
     </form>
   </section>

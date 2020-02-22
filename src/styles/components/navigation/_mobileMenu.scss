@@ -14,10 +14,6 @@
     display: block;
   }
 
-  &__shadow {
-    @extend .mobile-menu-shadow;
-  }
-
   &__nav {
     @extend .list-reset;
   }
@@ -62,10 +58,6 @@
     display: none;
     width: 350px;
     cursor: default;
-
-    &--products {
-      @extend .case-normalise;
-    }
 
     &.open {
       display: block;

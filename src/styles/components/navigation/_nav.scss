@@ -51,10 +51,6 @@
     cursor: default;
     border-radius: 2px;
 
-    &--products {
-      @extend .case-normalise;
-    }
-
     &.open {
       display: block;
       position: absolute;
