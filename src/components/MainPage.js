@@ -7,14 +7,15 @@ import Footer from "./Footer";
 
 const MainPage = () => (
   <div>
-    <Header />
-    <div className="body-panel">
-      <p>This is the main page</p>
+    <div className="nav-panel">
+      <Header />
     </div>
-    <BusinessStrategy />
-    <BrandDev />
-    <StayInTouch />
-    <Footer />
+    <div className="body-panel">
+      <BusinessStrategy />
+      <BrandDev />
+      <StayInTouch />
+      <Footer />
+    </div>
   </div>
 );
 

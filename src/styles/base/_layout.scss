@@ -8,11 +8,23 @@
   right: 0;
   top: 0;
   z-index: 999;
+
+  @media screen and (min-width: 1025px) {
+    width: 14%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(purple, 0.5);
+    height: 100%;
+  }
 }
 
 .body-panel {
-  background-color: lime;
-  height: 300px;
+  @media screen and (min-width: 1025px) {
+    width: 86%;
+    margin-left: 14%;
+  }
 }
 
 p {
