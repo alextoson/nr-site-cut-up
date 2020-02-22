@@ -17,7 +17,7 @@ body {
   padding: 0;
   background-color: white;
   color: #1a1a1a;
-  font-family: "Montserrat", "Verdana", sans-serif;
+  font-family: "ProximaNova-Light", "Verdana", sans-serif;
   font-size: 1.4em;
   position: relative;
 }
@@ -140,93 +140,6 @@ textarea {
     &__secondary {
       font-size: 1.8rem;
     }
-  }
-}
-
-.button {
-  text-align: center;
-  text-transform: uppercase;
-  display: inline-block;
-  width: 200px;
-  margin: 0;
-  font-weight: 500;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-  height: 36px;
-  line-height: 36px;
-  cursor: pointer;
-
-  &__primary {
-    @extend .button;
-    @include orangeGradient(true);
-    border-radius: 18px;
-    color: white;
-    border: none;
-  }
-
-  &__secondary {
-    @extend .button;
-    border-radius: 18px;
-    border: 1px solid;
-  }
-
-  &__tertiary {
-    @extend .button;
-    border-radius: 6px;
-    border: 1px solid;
-    background-color: transparent;
-  }
-
-  &__ghost {
-    @extend .button;
-    border-radius: 18px;
-    border: 1px solid white;
-    cursor: default;
-  }
-
-  &--orange {
-    border-color: $p-colour3;
-    color: $p-colour3;
-
-    &:hover {
-      background-color: rgba($p-colour3, 0.1);
-    }
-  }
-
-  &--green {
-    border-color: $s-colour6;
-    color: $s-colour6;
-
-    &:hover {
-      background-color: rgba($s-colour6, 0.1);
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    height: 48px;
-    line-height: 48px;
-    font-size: 1.3rem;
-    width: 250px;
-
-    &__primary {
-      border-radius: 24px;
-    }
-
-    &__secondary {
-      border-radius: 24px;
-    }
-
-    &__tertiary {
-      border-radius: 6px;
-    }
-
-    &__ghost {
-      border-radius: 24px;
-    }
-  }
-
-  &--small {
-    width: 200px;
   }
 }
 

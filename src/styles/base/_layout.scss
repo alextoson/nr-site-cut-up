@@ -1,16 +1,18 @@
 .nav-panel {
-  background-color: pink;
+  @include flexbox($justify-content: space-between, $align-content: center);
+  background-color: white;
   height: 65px;
-  position: fixed;
-  top: 0;
   left: 0;
+  padding: 0 10px;
+  position: sticky;
   right: 0;
+  top: 0;
   z-index: 999;
 }
 
 .body-panel {
   background-color: lime;
-  height: 500px;
+  height: 900px;
 }
 
 p {
