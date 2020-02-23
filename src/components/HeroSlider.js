@@ -6,28 +6,21 @@ export default class HeroSlider extends React.Component {
   state = {
     lock: false
   };
-  slide = y => {
-    y > 0 ? this.slider.slickNext() : this.slider.slickPrev();
-  };
-  lockScroll = () => {
-    console.log("yo");
-    this.setState(() => {
-      lock: true;
-    });
+  slide = event => {
+    if (!this.state.lock) {
+      event.preventDefault();
+    }
+    const delta = event.deltaY;
+    delta > 0 ? this.slider.slickNext() : this.slider.slickPrev();
   };
   componentWillMount() {
-    // window.addEventListener("wheel", this.handleScroll);
-    // const newSlideCount = document.querySelectorAll(".slide").length;
-    // this.setState(() => ({
-    //   slideCount: newSlideCount
-    // }));
     window.addEventListener("wheel", e => {
-      this.slide(e.deltaY);
+      this.slide(e);
     });
   }
   componentWillUnmount() {
     window.removeEventListener("wheel", e => {
-      this.slide(e.deltaY);
+      this.slide(e);
     });
   }
   render() {
@@ -39,10 +32,17 @@ export default class HeroSlider extends React.Component {
       slidesToScroll: 1,
       vertical: true,
       verticalSwiping: true,
-      beforeChange: function(currentSlide, nextSlide) {
+      beforeChange: (currentSlide, nextSlide) => {
         console.log("before change", currentSlide, nextSlide);
         if (nextSlide !== currentSlide) {
-          this.lockScroll();
+          console.log("hello alex");
+          this.setState(() => ({
+            lock: true
+          }));
+        } else {
+          this.setState(() => ({
+            lock: false
+          }));
         }
       }
     };
