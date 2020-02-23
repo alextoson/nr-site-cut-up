@@ -1,0 +1,50 @@
+.hero-slider {
+  // height: 100vh;
+  // background-color: rgba(lime, 0.3);
+  // height: 100vh;
+}
+
+.slide {
+  &__background {
+    background: #eee url(/images/HeroImage_OurServices.jpg) no-repeat center
+      center;
+    background-size: cover !important;
+    height: 100vh;
+  }
+
+  &__contents {
+    @include flexbox(
+      $direction: column,
+      $justify-content: center,
+      $align-items: flex-start
+    );
+    position: absolute;
+    max-width: 60vh;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding-left: 5vw;
+    z-index: 4;
+    text-align: left;
+  }
+}
+
+.slide-icons {
+  @include flexbox();
+  margin-top: 30px;
+
+  &__card {
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  &__text {
+    font-family: "ProximaNova-Semibold";
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 1px 0px white;
+  }
+}
