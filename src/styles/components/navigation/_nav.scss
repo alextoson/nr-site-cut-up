@@ -1,112 +1,98 @@
-.header-panel {
+.header {
   @include flexbox($justify-content: space-between, $align-content: center);
-  height: 100%;
+  background-color: white;
+  height: 65px;
+  width: 100%;
+  padding: 0 10px;
 
-  //header logo
-  &__logo {
-    @include flex-item($grow: 0, $shrink: 0, $basis: 150px);
-  }
-
-  &__logo-icon {
-    display: block;
-  }
-
-  //navigation
+  &__logo,
   &__nav {
-    @include flex-item($grow: 0, $shrink: 0, $basis: 100%);
-    max-width: 550px;
-    width: 100%;
-  }
-}
-
-.main-navigation {
-  @extend .list-reset;
-  display: none;
-
-  &__nav-item {
-    @include flex-item($grow: 0, $shrink: 0, $basis: auto);
-    color: $grey4;
-    margin-left: 8px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1rem;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-      color: $grey5;
-    }
-  }
-
-  &__chevron {
-    display: inline-block;
-  }
-
-  &__secondary-nav {
-    padding: 15px 15px 25px 15px;
-    margin: 0;
-    list-style-type: none;
     display: none;
-    width: 250px;
-    cursor: default;
-    border-radius: 2px;
+    text-align: left;
+  }
 
-    &.open {
+  &__nav-list {
+    @extend .list-reset;
+    width: 110px;
+  }
+
+  &__list-item {
+    font-family: "ProximaNova-Semibold";
+    font-size: 13px;
+    letter-spacing: 2px;
+    list-style: none;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    padding-top: 19px;
+    margin-bottom: 10px;
+
+    color: black;
+    line-height: 28px;
+  }
+
+  &__list-anchor {
+    color: #999;
+    position: relative;
+    display: inherit;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    border-bottom: 1px solid #999;
+
+    span {
       display: block;
       position: absolute;
-      top: 30px;
-      background-color: $grey1;
-      @include box-shadow(0px, 6px, 6px, 0, rgba(51, 51, 51, 0.1));
-      -webkit-animation: fadein 0.5s;
-      animation: fadein 0.5s;
+      left: 0;
+      top: 0;
+      width: 0;
+      margin-top: 0px;
+      height: 100%;
+      overflow: hidden;
+      -webkit-transition: 0.6s;
+      -o-transition: 0.6s;
+      transition: 0.6s;
+      border-bottom: 1px solid #000;
+    }
+
+    span::before {
+      content: attr(rel);
+      position: absolute;
+      margin: 0;
+      left: 0;
+      top: 0;
+      padding: 0;
+      color: #000;
     }
   }
 
-  &__secondary-nav-item {
-    display: block;
-    color: $grey4;
-    margin: 25px 20px 20px 20px;
-    cursor: pointer;
+  &__list-anchor:hover {
+    border-bottom: 1px solid #000;
+  }
 
-    &:hover {
-      color: $grey5;
+  &__list-anchor:hover span {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1025px) {
+    @include flexbox(
+      $direction: column,
+      $justify-content: flex-start,
+      $align-content: center
+    );
+    height: 100%;
+    padding-top: 10px;
+
+    &__mobile-logo,
+    &__mobile-icon {
+      display: none;
     }
-  }
-}
 
-@media screen and (min-width: 768px) {
-  .main-navigation {
-    @include flexbox($justify-content: space-between);
-  }
-}
+    &__logo {
+      display: block;
+    }
 
-@media screen and (min-width: 1001px) {
-  .header-panel__logo {
-    @include flex-item($grow: 0, $shrink: 0, $basis: 200px);
-  }
-
-  .header-panel__nav {
-    max-width: 700px;
-  }
-
-  .main-navigation__nav-item {
-    @include flex-item($grow: 0, $shrink: 0, $basis: auto);
-    margin-left: 15px;
-    font-size: 1.2rem;
-  }
-
-  .main-navigation__secondary-nav {
-    padding: 25px 25px 35px 25px;
-    width: 350px;
-  }
-}
-
-@media screen and (min-width: 1151px) {
-  .header-panel__nav {
-    max-width: 790px;
-  }
-
-  .main-navigation__nav-item {
-    font-size: 1.4rem;
+    &__nav {
+      display: block;
+    }
   }
 }
