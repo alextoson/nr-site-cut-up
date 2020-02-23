@@ -2,6 +2,7 @@
   // height: 100vh;
   // background-color: rgba(lime, 0.3);
   // height: 100vh;
+  overflow: hidden;
 }
 
 .slide {
@@ -47,4 +48,12 @@
     text-transform: uppercase;
     text-shadow: 2px 1px 0px white;
   }
+}
+
+.slick-dots {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  background: rgba(pink, 0.7);
+  z-index: 6;
 }

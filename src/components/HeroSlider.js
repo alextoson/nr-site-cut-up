@@ -3,51 +3,32 @@ import Slider from "react-slick";
 import Slide from "./Slide";
 
 export default class HeroSlider extends React.Component {
-  // state = {
-  //   slideCount: 0,
-  //   slideIndex: 1
-  // };
-  handleScroll = event => {
-    console.log("triggered:", event);
-    const delta = event.deltaY;
-    if (delta > 0) {
-      if (this.state.slideIndex !== this.state.slideCount) {
-        this.setState(prevState => ({
-          slideIndex: prevState.slideIndex + 1
-        }));
-      }
-    } else {
-      if (this.state.slideIndex > 1) {
-        this.setState(prevState => ({
-          slideIndex: prevState.slideIndex - 1
-        }));
-      }
-    }
-    // if (delta > 0) {
-    //   if (this.state.slideIndex !== this.state.slideCount) {
-    //     event.preventDefault();
-    //     this.setState(prevState => ({
-    //       slideIndex: prevState.slideIndex + 1
-    //     }));
-    //   }
-    // } else {
-    //   if (this.state.slideIndex > 1) {
-    //     event.preventDefault();
-    //     this.setState(prevState => ({
-    //       slideIndex: prevState.slideIndex - 1
-    //     }));
-    //   }
-    // }
+  state = {
+    lock: false
   };
-  componentDidMount() {
+  slide = y => {
+    y > 0 ? this.slider.slickNext() : this.slider.slickPrev();
+  };
+  lockScroll = () => {
+    console.log("yo");
+    this.setState(() => {
+      lock: true;
+    });
+  };
+  componentWillMount() {
     // window.addEventListener("wheel", this.handleScroll);
     // const newSlideCount = document.querySelectorAll(".slide").length;
     // this.setState(() => ({
     //   slideCount: newSlideCount
     // }));
+    window.addEventListener("wheel", e => {
+      this.slide(e.deltaY);
+    });
   }
   componentWillUnmount() {
-    // window.removeEventListener("wheel", this.handleScroll);
+    window.removeEventListener("wheel", e => {
+      this.slide(e.deltaY);
+    });
   }
   render() {
     const settings = {
@@ -57,11 +38,17 @@ export default class HeroSlider extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       vertical: true,
-      verticalSwiping: true
+      verticalSwiping: true,
+      beforeChange: function(currentSlide, nextSlide) {
+        console.log("before change", currentSlide, nextSlide);
+        if (nextSlide !== currentSlide) {
+          this.lockScroll();
+        }
+      }
     };
     return (
       <section className="hero-slider">
-        <Slider {...settings}>
+        <Slider {...settings} ref={slider => (this.slider = slider)}>
           <Slide index={1} title="Our Services" />
           <Slide index={2} title="Brand Strategy" />
         </Slider>
