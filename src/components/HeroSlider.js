@@ -1,5 +1,4 @@
 import React from "react";
-import debounce from "lodash";
 import Slider from "react-slick";
 import Slide from "./Slide";
 
@@ -20,16 +19,6 @@ export default class HeroSlider extends React.Component {
       delta > 0 ? this.slider.slickNext() : this.slider.slickPrev();
     }
   };
-  // componentWillMount() {
-  //   // window.addEventListener("wheel", e => {
-  //   //   this.slide(e);
-  //   // });
-  // }
-  // componentWillUnmount() {
-  //   // window.removeEventListener("wheel", e => {
-  //   //   this.slide(e);
-  //   // });
-  // }
   render() {
     const settings = {
       arrows: false,
@@ -52,6 +41,20 @@ export default class HeroSlider extends React.Component {
         }
       }
     };
+    const slides = {
+      slide1: {
+        title: "Our Services",
+        content:
+          "The imaginative crafting of psychology, art, technology and business to create beautiful ideas, products and services.",
+        slideIcons: true
+      },
+      slide2: {
+        title: "Brand Strategy",
+        content:
+          "Curabitur lobotis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at. Vestibulum nec erat ut mi sollicitudin porttitor id sit amet risus. nam tempus vel odio vitae aliquam. in imperdiet eros.",
+        slideButton: true
+      }
+    };
     return (
       <section
         className="hero-slider"
@@ -63,8 +66,8 @@ export default class HeroSlider extends React.Component {
         })}
       >
         <Slider {...settings} ref={slider => (this.slider = slider)}>
-          <Slide index={1} title="Our Services" />
-          <Slide index={2} title="Brand Strategy" />
+          <Slide index={1} data={slides.slide1} />
+          <Slide index={2} data={slides.slide2} />
         </Slider>
       </section>
     );
