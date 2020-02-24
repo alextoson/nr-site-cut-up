@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import { debounce } from "lodash/debounce";
 import Slide from "./Slide";
 
 export default class HeroSlider extends React.Component {
@@ -60,10 +59,10 @@ export default class HeroSlider extends React.Component {
       <section
         className="hero-slider"
         onMouseOver={window.addEventListener("wheel", e => {
-          debounce(this.slide(e), 1000);
+          this.slide(e);
         })}
         onMouseLeave={window.removeEventListener("wheel", e => {
-          debounce(this.slide(e), 1000);
+          this.slide(e);
         })}
       >
         <Slider {...settings} ref={slider => (this.slider = slider)}>

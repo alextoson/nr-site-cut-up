@@ -51,9 +51,29 @@
 }
 
 .slick-dots {
+  @extend .list-reset;
   position: absolute;
   right: 30px;
   top: 50%;
-  background: rgba(pink, 0.7);
+  transform: translateY(-50%);
   z-index: 6;
+
+  li {
+    margin: 15px 0;
+  }
+
+  button {
+    border-radius: 50%;
+    padding: 0;
+    width: 13px;
+    height: 13px;
+    border: none;
+    outline: 0;
+    font-size: 0;
+    background-color: #ccc;
+  }
+}
+
+.slick-active button {
+  background-color: pink;
 }
