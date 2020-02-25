@@ -1,90 +1,38 @@
 .mobile-menu {
-  width: 100%;
-  position: fixed;
-  top: 6rem;
-  right: 0;
-  background-color: $grey1;
-  z-index: -5000;
-  height: calc(var(--vh, 1vh) * 100 - 6rem);
-  overflow: auto;
   display: none;
-
-  &.open {
-    animation: grow-from-right 0.3s linear;
-    display: block;
-  }
+  position: fixed;
+  background-color: white;
+  top: 64px;
+  width: 100%;
+  right: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  z-index: 99999;
+  height: 95vh;
+  opacity: 0.99;
 
   &__nav {
-    @extend .list-reset;
-  }
+    padding-top: 0;
+    margin-left: 7%;
+    width: 140px;
 
-  &__nav-item {
-    color: $grey4;
-    margin: 0 15px;
-    padding: 20px 10px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    position: relative;
-    cursor: pointer;
-    border-bottom: 1px solid $grey2;
+    li {
+      font-size: 1.6rem;
+      line-height: 20px;
+      letter-spacing: 3px;
 
-    &:hover {
-      color: $grey5;
-    }
-
-    span {
-      width: 100%;
-      display: block;
-      padding: 20px 10px;
+      @media screen and (min-width: 550px) {
+        font-size: 1.4rem;
+        line-height: 28px;
+      }
     }
   }
 
-  &__nav-item--drop-down {
-    padding: 0;
-  }
-
-  &__plus-expander {
-    position: absolute;
-    right: 15px;
-    top: 20px;
-  }
-
-  &__secondary-nav {
-    padding: 0 15px 15px 15px;
-    margin: 0;
-    list-style-type: none;
-    display: none;
-    width: 350px;
-    cursor: default;
-
-    &.open {
-      display: block;
-      -webkit-animation: fadein 0.7s;
-      animation: fadein 0.7s;
-    }
-  }
-
-  &__secondary-nav-item {
+  &--open {
     display: block;
-    cursor: pointer;
-    border-bottom: none;
-    padding: 8px 0;
-    margin: 0 5px;
-    font-size: 1.2rem;
-  }
-}
 
-.mobile-menu-social-icons {
-  padding: 2rem;
-  text-align: center;
-  margin-top: 0.6rem;
-  margin-bottom: 5rem;
-}
-
-@media screen and (min-width: 768px) {
-  .mobile-menu {
-    display: none !important;
+    @media screen and (min-width: 1025px) {
+      display: none;
+    }
   }
 }

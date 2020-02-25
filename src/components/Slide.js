@@ -1,8 +1,12 @@
 import React from "react";
 
 const Slide = props => (
-  <div className={"slide"}>
-    <div className="slide__background"></div>
+  <div className="slide">
+    <div
+      className={
+        "slide__background slide__background--" + props.data.backgroundClass
+      }
+    ></div>
     <div className="slide__contents">
       <h2 className="heading">{props.data.title}</h2>
       <p className="body-content body-content--grey">{props.data.content}</p>
@@ -19,21 +23,21 @@ const Slide = props => (
 const SlideIcon = () => (
   <div className="slide-icons">
     <div className="slide-icons__card">
-      <img className="slide-icons__icon" src="/images/Icon_Strategy.png" />
+      <img className="img-rspnv slide-icons__icon" src="/images/Icon_Strategy.png" />
       <p className="slide-icons__text">
         Branding,
         <br /> Brand Strategy
       </p>
     </div>
     <div className="slide-icons__card">
-      <img className="slide-icons__icon" src="/images/Icon_CRO.png" />
+      <img className="img-rspnv slide-icons__icon" src="/images/Icon_CRO.png" />
       <p className="slide-icons__text">
         Conversation
         <br /> Rate optimisations
       </p>
     </div>
     <div className="slide-icons__card">
-      <img className="slide-icons__icon" src="/images/Icon_UXDesign.png" />
+      <img className="img-rspnv slide-icons__icon" src="/images/Icon_UXDesign.png" />
       <p className="slide-icons__text">
         UX, Design,
         <br /> Developemnt

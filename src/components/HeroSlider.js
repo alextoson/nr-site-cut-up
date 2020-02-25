@@ -8,14 +8,12 @@ export default class HeroSlider extends React.Component {
   };
   slide = event => {
     const scrollPosition = document.querySelector("html").scrollTop;
-    console.log("state:", this.state.lock);
     if (scrollPosition === 0) {
       if (!this.state.lock) {
         event.preventDefault();
         event.stopPropagation();
       }
       const delta = event.deltaY;
-      console.log(delta);
       delta > 0 ? this.slider.slickNext() : this.slider.slickPrev();
     }
   };
@@ -29,7 +27,6 @@ export default class HeroSlider extends React.Component {
       vertical: true,
       verticalSwiping: true,
       beforeChange: (currentSlide, nextSlide) => {
-        console.log("before change", currentSlide, nextSlide);
         if (nextSlide > currentSlide || nextSlide < currentSlide) {
           this.setState(() => ({
             lock: false
@@ -46,12 +43,14 @@ export default class HeroSlider extends React.Component {
         title: "Our Services",
         content:
           "The imaginative crafting of psychology, art, technology and business to create beautiful ideas, products and services.",
+        backgroundClass: "services",
         slideIcons: true
       },
       slide2: {
         title: "Brand Strategy",
         content:
           "Curabitur lobotis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at. Vestibulum nec erat ut mi sollicitudin porttitor id sit amet risus. nam tempus vel odio vitae aliquam. in imperdiet eros.",
+        backgroundClass: "strategy",
         slideButton: true
       }
     };

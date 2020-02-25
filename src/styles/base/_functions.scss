@@ -7,25 +7,6 @@
   background: rgba(#ff748c, 0.3);
 }
 
-//shadow insert
-@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
-  @if $inset {
-    -moz-box-shadow: inset $top $left $blur $spread $color;
-    box-shadow: inset $top $left $blur $spread $color;
-  } @else {
-    -moz-box-shadow: $top $left $blur $spread $color;
-    box-shadow: $top $left $blur $spread $color;
-  }
-}
-
-//gradient maker
-@mixin gradientMaker($primary: white, $p-opacity: 1, $secondary: white, $s-opacity: 1) {
-  background: $primary;
-  // background: -moz-linear-gradient(90deg, rgba($primary, $p-opacity) 0%, rgba($secondary, $s-opacity) 100%);
-  // background: -webkit-linear-gradient(90deg, rgba($primary, $p-opacity) 0%, rgba($secondary, $s-opacity) 100%);
-  background: linear-gradient(90deg, rgba($primary, $p-opacity) 0%, rgba($secondary, $s-opacity) 100%);
-}
-
 /***************************/
 /**** FLEXBOX FUNCTIONS ****/
 /***************************/
@@ -129,35 +110,4 @@
   -moz-box-ordinal-group: $int + 1;
   -webkit-order: $int;
   order: $int;
-}
-
-/***************************/
-/******** KEYFRAMES ********/
-/***************************/
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes grow-from-right {
-  0% {
-    transform: translateX(50rem);
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes slider-fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
 }

@@ -1,0 +1,99 @@
+.header {
+  @include flexbox($justify-content: space-between, $align-content: center);
+  background-color: white;
+  height: 65px;
+  width: 100%;
+  padding: 0 10px;
+
+  &__logo,
+  &__nav {
+    display: none;
+    text-align: left;
+  }
+
+  @media screen and (min-width: 1025px) {
+    @include flexbox($direction: column, $justify-content: flex-start, $align-content: center);
+    height: 100%;
+    padding-top: 5px;
+
+    &__mobile-logo,
+    &__mobile-icon {
+      display: none;
+    }
+
+    &__logo {
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    &__nav {
+      display: block;
+    }
+  }
+}
+
+.site-nav {
+  @extend .list-reset;
+  padding-top: 19px;
+  width: 110px;
+
+  &__list-item {
+    font-family: "ProximaNova-Semibold";
+    font-size: 13px;
+    letter-spacing: 2px;
+    list-style: none;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+
+    color: black;
+    line-height: 28px;
+  }
+
+  &__list-anchor {
+    color: #999;
+    position: relative;
+    display: inherit;
+    -webkit-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+    border-bottom: 1px solid #999;
+
+    @media screen and (min-width: 1025px) {
+      span {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        margin-top: 0px;
+        height: 100%;
+        overflow: hidden;
+        -webkit-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+        border-bottom: 1px solid #000;
+      }
+
+      span::before {
+        content: attr(rel);
+        position: absolute;
+        margin: 0;
+        left: 0;
+        top: 0;
+        padding: 0;
+        color: #000;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    &__list-anchor:hover {
+      border-bottom: 1px solid #000;
+    }
+
+    &__list-anchor:hover span {
+      width: 100%;
+    }
+  }
+}
