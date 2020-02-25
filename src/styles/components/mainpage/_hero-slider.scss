@@ -1,13 +1,10 @@
 .hero-slider {
-  // height: 100vh;
-  // background-color: rgba(lime, 0.3);
-  // height: 100vh;
   overflow: hidden;
 }
 
 .slide {
-  height: calc(100vh - 65px);
   background-color: #eee;
+  height: calc(100vh - 65px);
 
   @media screen and (min-width: 768px) {
     height: 100vh;
@@ -19,26 +16,32 @@
   }
 
   &__background--services {
-    background: #eee url(/images/HeroImage_OurServices.jpg) no-repeat center center;
+    background: #eee url(/images/HeroImage_OurServices.jpg) no-repeat center
+      center;
   }
 
   &__background--strategy {
-    background: #eee url(/images/HeroImage_BrandStrategy.jpg) no-repeat center center;
+    background: #eee url(/images/HeroImage_BrandStrategy.jpg) no-repeat center
+      center;
   }
 
   &__contents {
-    @include flexbox($direction: column, $justify-content: center, $align-items: flex-start);
-    position: absolute;
-    max-width: 85%;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    right: 0;
+    @include flexbox(
+      $direction: column,
+      $justify-content: center,
+      $align-items: flex-start
+    );
     bottom: 0;
-    top: 0;
+    height: 100%;
+    left: 0;
+    max-width: 85%;
     padding-left: 5vw;
-    z-index: 4;
+    position: absolute;
+    right: 0;
     text-align: left;
+    top: 0;
+    width: 100%;
+    z-index: 4;
 
     p {
       text-shadow: 2px 1px 0px white;
@@ -64,20 +67,20 @@
   &__card {
     @include flex-item($grow: 0, $shrink: 1, $basis: 100%);
     @include flexbox($align-items: flex-start);
-    text-align: center;
     padding-right: 15px;
     padding-bottom: 10px;
+    text-align: center;
   }
 
   &__text {
     @include flex-item($grow: 1, $basis: auto);
     font-family: "ProximaNova-Semibold";
-    letter-spacing: 1px;
-    text-align: left;
-    padding-left: 10px;
-    text-transform: uppercase;
-    text-shadow: 2px 1px 0px white;
     font-size: 1rem;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    text-align: left;
+    text-shadow: 2px 1px 0px white;
+    text-transform: uppercase;
   }
 
   &__icon {
@@ -93,8 +96,8 @@
     }
 
     &__text {
-      text-align: center;
       padding-left: 0;
+      text-align: center;
     }
 
     &__icon {
@@ -109,6 +112,16 @@
 
     &__icon {
       width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 901px) {
+    &__card {
+      @include flex-item($grow: 0, $shrink: 1, $basis: 160px);
+    }
+
+    &__text {
+      font-size: 1.2rem;
     }
   }
 }
@@ -126,15 +139,15 @@
   }
 
   button {
-    border-radius: 50%;
-    padding: 0;
-    width: 8px;
-    height: 8px;
-    border: none;
-    outline: 0;
-    font-size: 0;
     background-color: #bbb;
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
+    font-size: 0;
+    height: 8px;
+    padding: 0;
+    outline: 0;
+    width: 8px;
   }
 }
 

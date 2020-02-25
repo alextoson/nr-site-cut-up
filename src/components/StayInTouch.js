@@ -4,10 +4,13 @@ const StayInTouch = () => (
   <section className="stay-in-touch">
     <div className="stay-in-touch__inner">
       <div className="stay-in-touch__col">
-        <h2 className="heading">Stay in touch</h2>
+        <h2 className="heading">
+          Stay in touch<span className="heading__period">.</span>
+        </h2>
         <p className="body-content">
-          Each month we release a newsletter on how we do what we do. Lorem ipsum
-          dolor sit amet, consectetur adipisicing elit.</p>
+          Each month we release a newsletter on how we do what we do. Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
         <form>
           <label>
             <input

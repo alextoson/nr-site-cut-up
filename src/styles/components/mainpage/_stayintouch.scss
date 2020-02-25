@@ -1,20 +1,20 @@
 .stay-in-touch {
   background-color: $grey1;
-  padding: 100px 60px;
+  padding: 100px 15px;
   text-align: center;
 
   &__inner {
     @media screen and (min-width: 640px) {
-      width: 1280px;
-      max-width: 100%;
       margin: auto;
+      max-width: 100%;
+      width: 1280px;
     }
   }
 
   &__col {
     @media screen and (min-width: 640px) {
-      width: 66.66%;
       margin: auto;
+      width: 66.66%;
     }
   }
 
@@ -32,7 +32,6 @@
     max-width: 580px;
     padding: 10px 0 10px 15px;
     width: 100%;
-
     -moz-appearance: none;
   }
 
@@ -42,8 +41,8 @@
 
   &__input:focus {
     border: 1px solid #8a8a8a;
-    outline: none;
     box-shadow: 0 0 5px #cacaca;
+    outline: none;
     transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
   }
 
@@ -61,5 +60,9 @@
     margin: auto;
     padding: 52px 0 0 0;
     text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 640px) {
+    padding: 100px 60px;
   }
 }

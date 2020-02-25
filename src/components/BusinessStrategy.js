@@ -6,18 +6,18 @@ const BusinessStrategy = () => (
       <div className="bus-strat__content-inner">
         <h2 className="heading bus-strat__title">
           Digital Business <br />
-          Strategy
-      </h2>
+          Strategy<span className="heading__period">.</span>
+        </h2>
         <p className="body-content">
-          We work withmany organisations to research and assess potential digital,
-          mobile, and new technology business models that can help tehm
+          We work withmany organisations to research and assess potential
+          digital, mobile, and new technology business models that can help tehm
           differentiate, create new revenues or reduce the cost of delivery.
-      </p>
+        </p>
         <p className="body-content">
-          Many organisations that approach us don't have the background, skill or
-          know how to identify and assess how their organisation can take
+          Many organisations that approach us don't have the background, skill
+          or know how to identify and assess how their organisation can take
           advantage of digital opportunities.
-      </p>
+        </p>
         <a className="button">
           <p>View Related Work</p>
         </a>

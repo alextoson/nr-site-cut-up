@@ -1,25 +1,25 @@
 .mobile-menu {
-  display: none;
-  position: fixed;
   background-color: white;
-  top: 64px;
-  width: 100%;
-  right: 0;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  z-index: 99999;
+  display: none;
   height: 95vh;
   opacity: 0.99;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: fixed;
+  right: 0;
+  top: 64px;
+  width: 100%;
+  z-index: 99999;
 
   &__nav {
-    padding-top: 0;
     margin-left: 7%;
+    padding-top: 0;
     width: 140px;
 
     li {
       font-size: 1.6rem;
-      line-height: 20px;
       letter-spacing: 3px;
+      line-height: 20px;
 
       @media screen and (min-width: 550px) {
         font-size: 1.4rem;

@@ -15,7 +15,12 @@
 /*********************************/
 
 //master flexbox container function
-@mixin flexbox($direction: row wrap, $justify-content: flex-start, $align-items: center, $align-content: flex-start) {
+@mixin flexbox(
+  $direction: row wrap,
+  $justify-content: flex-start,
+  $align-items: center,
+  $align-content: flex-start
+) {
   //initial flexbox call
   display: -webkit-box;
   display: -moz-box;
@@ -82,7 +87,13 @@
 /****************************/
 
 //flex item master function
-@mixin flex-item($grow: 0, $shrink: 0, $basis: auto, $align-self: auto, $order: 0) {
+@mixin flex-item(
+  $grow: 0,
+  $shrink: 0,
+  $basis: auto,
+  $align-self: auto,
+  $order: 0
+) {
   -webkit-flex: $grow $shrink $basis;
   flex: $grow $shrink $basis;
 

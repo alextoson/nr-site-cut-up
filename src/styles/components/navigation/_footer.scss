@@ -1,17 +1,17 @@
 .footer {
   background-color: black;
   color: white;
-  text-align: center;
   padding: 50px 15px;
+  text-align: center;
 
   &__social-link {
-    display: inline-block;
-    position: relative;
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
     border: 1px solid #3f4046;
+    display: inline-block;
+    height: 48px;
     margin: 0 3px;
+    position: relative;
+    width: 48px;
 
     @media screen and (min-width: 481px) {
       margin: 0 10px;
