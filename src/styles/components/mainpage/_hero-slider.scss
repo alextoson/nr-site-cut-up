@@ -3,7 +3,7 @@
 }
 
 .slide {
-  background-color: #eee;
+  background-color: $grey2;
   height: calc(100vh - 65px);
 
   @media screen and (min-width: 768px) {
@@ -16,12 +16,12 @@
   }
 
   &__background--services {
-    background: #eee url(/images/HeroImage_OurServices.jpg) no-repeat center
+    background: $grey2 url(/images/HeroImage_OurServices.jpg) no-repeat center
       center;
   }
 
   &__background--strategy {
-    background: #eee url(/images/HeroImage_BrandStrategy.jpg) no-repeat center
+    background: $grey2 url(/images/HeroImage_BrandStrategy.jpg) no-repeat center
       center;
   }
 
@@ -44,7 +44,7 @@
     z-index: 4;
 
     p {
-      text-shadow: 2px 1px 0px white;
+      text-shadow: 2px 1px 0px $white;
     }
 
     @media screen and (min-width: 768px) {
@@ -79,7 +79,7 @@
     letter-spacing: 1px;
     padding-left: 10px;
     text-align: left;
-    text-shadow: 2px 1px 0px white;
+    text-shadow: 2px 1px 0px $white;
     text-transform: uppercase;
   }
 
@@ -139,7 +139,7 @@
   }
 
   button {
-    background-color: #bbb;
+    background-color: $grey5;
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -152,5 +152,5 @@
 }
 
 .slick-active button {
-  background-color: #ee5eb6;
+  background-color: $light-pink;
 }
